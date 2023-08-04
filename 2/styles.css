@@ -1,3 +1,95 @@
+@keyframes top-animation {
+  0% {
+  }
+
+  50% {
+    transform: translateY(23px);
+  }
+
+  100% {
+    transform: translateY(23px) rotate(45deg);
+    transform-origin: center;
+  }
+}
+
+@keyframes top-animation-rev {
+  0% {
+    transform: translateY(23px) rotate(45deg);
+    transform-origin: center;
+  }
+
+  50% {
+    transform: translateY(23px) rotate(0deg);
+    transform-origin: center;
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    transform-origin: center;
+  }
+}
+
+@keyframes middle-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes middle-animation-rev {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bottom-animation {
+  0% {
+  }
+
+  50% {
+    transform: translateY(-23px);
+  }
+
+  100% {
+    transform: translateY(-23px) rotate(135deg);
+    transform-origin: center;
+  }
+}
+
+@keyframes bottom-animation-rev {
+  0% {
+    transform: translateY(-23px) rotate(135deg);
+    transform-origin: center;
+  }
+
+  50% {
+    transform: translateY(-23px) rotate(0deg);
+    transform-origin: center;
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    transform-origin: center;
+  }
+}
+
 .frame {
   position: absolute;
   top: 50%;
@@ -24,16 +116,47 @@
   transform: translate(-50%, -50%);
 }
 
-.burger {
+.hamburger {
   width: 80px;
   height: auto;
+  cursor: pointer;
 }
 
-.line {
+.bar {
   background-color: white;
   width: 100%;
   height: 8px;
-  margin: 15px 0px;
+  margin: 15px auto;
   border-radius: 3px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  display: block;
+  transition: 300ms;
+}
+
+.no-animation {
+  animation: none !important;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  animation: top-animation 600ms ease-in-out forwards;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  animation: middle-animation 600ms ease-in-out forwards;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  animation: bottom-animation 600ms ease-in-out forwards;
+}
+
+.hamburger.inactive .bar:nth-child(1) {
+  animation: top-animation-rev 600ms ease-in-out forwards;
+}
+
+.hamburger.inactive .bar:nth-child(2) {
+  animation: middle-animation-rev 600ms ease-in-out forwards;
+}
+
+.hamburger.inactive .bar:nth-child(3) {
+  animation: bottom-animation-rev 600ms ease-in-out forwards;
 }
