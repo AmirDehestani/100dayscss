@@ -1,0 +1,116 @@
+@keyframes loading-large {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  1% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  27% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  72% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  90% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@keyframes loading-medium {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  8% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  36% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  63% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  82% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@keyframes loading-small {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  19% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  45% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  54% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  76% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #e56262;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+  box-shadow: 5px 5px 10px 6px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+}
+
+.large {
+  height: 100px;
+  width: 100px;
+  animation: loading-large 5000ms ease-in-out infinite;
+}
+
+.medium {
+  height: 65px;
+  width: 65px;
+  animation: loading-medium 5000ms ease-in-out infinite;
+}
+
+.small {
+  height: 30px;
+  width: 30px;
+  animation: loading-small 5000ms ease-in-out infinite;
+}
