@@ -157,6 +157,16 @@
   border-radius: 50%;
 }
 
+.red-dot:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-28px) translateX(-10px);
+}
+
+.blue-dot:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-28px) translateX(-8px);
+}
+
 .rd-1 {
   transform: translateX(16px) translateY(56px);
 }
@@ -219,4 +229,46 @@
 
 .bd-7 {
   transform: translateX(253px) translateY(78px);
+}
+
+.tooltip {
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  font-size: 10px;
+  color: white;
+  padding: 5px;
+  border-radius: 14%;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.red-dot .tooltip {
+  background-color: #e35d5d;
+  transform: translateY(-20px) translateX(-10px);
+}
+
+.blue-dot .tooltip {
+  background-color: #628ae6;
+  transform: translateY(-20px) translateX(-7px);
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  border-width: 6px 6px 0px;
+  border-style: solid;
+  z-index: 0;
+  bottom: -5px;
+}
+
+.red-dot .tooltip::before {
+  border-color: #e35d5d transparent transparent;
+  margin-left: 2px;
+}
+
+.blue-dot .tooltip::before {
+  border-color: #628ae6 transparent transparent;
 }
