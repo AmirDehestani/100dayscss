@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,15 +9,25 @@
       src="https://kit.fontawesome.com/bd4a0e88e0.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="frame">
       <div class="center">
         <div class="main">
           <div class="main-header">
-            <div class="nav-toggle fa-solid fa-bars"></div>
+            <div class="nav-toggle">
+              <div class="bar-n"></div>
+              <div class="bar-n"></div>
+              <div class="circle-n"></div>
+            </div>
             <div>Notifications</div>
             <div class="search-toggle fa-solid fa-magnifying-glass"></div>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="search-bar hidden"
+            />
           </div>
           <div class="main-body">
             <div class="grey-line"></div>
@@ -49,7 +60,19 @@
             </div>
           </div>
         </div>
-        <div class="nav"></div>
+        <div class="nav">
+          <div class="nav-link">
+            <i class="fa-solid fa-gauge-high"></i>Dashboard
+          </div>
+          <div class="nav-link"><i class="fa-solid fa-user"></i>Profile</div>
+          <div class="nav-link">
+            <i class="fa-solid fa-bell"></i>Notifications
+          </div>
+          <div class="nav-link">
+            <i class="fa-solid fa-comments"></i>Messages
+          </div>
+          <div class="nav-link"><i class="fa-solid fa-gear"></i>Settings</div>
+        </div>
       </div>
     </div>
   </body>
